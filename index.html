@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動列表</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1>活動列表</h1>
+</header>
+<div class="container" id="eventList">
+    <!-- 活動卡片將在這裡動態添加 -->
+</div>
+<div id="eventSystem" class="hidden">
+    <header>
+        <h1 id="eventTitle">活動報到系統</h1>
+        <div class="btn-container">
+            <button class="event_btn" onclick="showRegistered()"><i class="fas fa-list"></i> 已報名</button>
+            <button class="event_btn" onclick="showOnsite()"><i class="fas fa-user-plus"></i> 現場報名</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="registeredSection" class="hidden card">
+            <h2><i class="fas fa-users"></i> 已報名人員名單</h2>
+            <ul id="registeredList">
+                <!-- 這裡會動態添加已報名人員 -->
+            </ul>
+        </div>
+
+        <div id="qrCodeSection" class="hidden card">
+            <h2><i class="fas fa-qrcode"></i> 報到 QR Code</h2>
+            <div id="qrCode">
+                <img src="https://via.placeholder.com/250" alt="QR Code">
+            </div>
+            <button class="btn" onclick="showRegistered()"><i class="fas fa-arrow-left"></i> 返回名單</button>
+        </div>
+
+        <div id="onsiteSection" class="hidden card">
+            <h2><i class="fas fa-pen"></i> 現場報名</h2>
+            <form id="onsiteForm">
+                <input type="text" id="name" placeholder="姓名" required>
+                <input type="tel" id="phone" placeholder="電話" required>
+                <input type="text" id="company" placeholder="公司名稱" required>
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> 提交報名</button>
+            </form>
+        </div>
+    </div>
+    <div class="back-btn-container">
+        <button class="btn back-btn" onclick="backToEventList()"><i class="fas fa-arrow-left"></i> 返回活動列表</button>
+    </div>
+</div>
+<footer>
+    <p class="footer-text">Copyright © 2024 <a href="https://evo-techlab.com">Evo.lab</a></p>
+</footer>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>
